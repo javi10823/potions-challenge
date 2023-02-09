@@ -1,0 +1,12 @@
+.potionsMain{
+    width: 60%;
+}
+
+.potionsContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+.input{
+    text-align: center;
+}
