@@ -1,10 +1,30 @@
-# Getting Started with Create React App
+# CLOVERS POTION CHALLENGE
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Author:
+
+### Javier Olivieri
+
+## Code
+
+App created with React JS, Typescript, React-testing-library and Jest.
+
+This app emulates a potion shop, it caculates the most damage percentage that can be done with the given amount of potions.
+
+The Algorithm validates the amount of different potions and then calculates the most efficient combination of attacks. Retreiving a list of attacks and the final damage percentage.
+
+The algorithm stores the potions in an array an then sorts the potions array in descending order of the value property. It then filters out the potion objects that have value less than or equal to 0.
+
+The array is then used to calculate the maximum damage that can be dealt. The function uses two helper functions, potionIndividually and potionTogether, to calculate the damage from using each potion individually or using multiple potions together.
+
+In potionIndividually, for each potion object in the array, the damage is incremented by 3 and the corresponding attack information is added to the attackList array.
+
+In potionTogether, if there are 3 potion objects, the damage is incremented by 10. Otherwise, the damage is incremented by the number of different potions multiplied by 5. The corresponding attack information is added to the attackList array, which includes the colors of the used potions.
+
+The MaxDamage function then uses a while loop to repeatedly call the potionIndividually and potionTogether functions until the array is empty.
+
+The final value of the damage is stored in the state totalDamage using the setDamage function. The array of attack information is stored in the state combinations using the setCombinations function.
 
 ## Available Scripts
-
-In the project directory, you can run:
 
 ### `npm start`
 
@@ -18,29 +38,3 @@ You will also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
