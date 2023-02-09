@@ -1,4 +1,4 @@
-export interface potion {
+export interface Potion {
 	color: string;
 	value: number;
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './App.module.css';
-import { potion } from './interface';
+import { Potion } from './interface';
 import Potions from './Potions';
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
 	const [grayPotion, setGrayPotion] = useState(0);
 	const [bluePotion, setBluePotion] = useState(0);
 
-	function potionIndividually(pot: potion[]) {
+	function potionIndividually(pot: Potion[]) {
 		pot.forEach((pot) => {
 			damage += 3;
 			attackList.push(`Atacked using a ${pot.color} potion`);
@@ -24,7 +24,7 @@ function App() {
 		return pot;
 	}
 
-	function potionTogether(pot: potion[]) {
+	function potionTogether(pot: Potion[]) {
 		let combinedAttack: string[] = [];
 		pot.length === 3 ? (damage += 10) : (damage += pot.length * 5);
 		pot.forEach((pot) => {
@@ -43,7 +43,7 @@ function App() {
 		return pot;
 	}
 
-	function MaxDamage(pots: potion[]) {
+	function MaxDamage(pots: Potion[]) {
 		pots.sort((a, b) => b.value - a.value);
 		let localePotions = pots.filter((potion) => potion.value > 0);
 		while (localePotions.length > 0) {
